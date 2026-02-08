@@ -1,0 +1,172 @@
+//- LaTex
+script(async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script")
+
+//- Analytics tracking
+- var ga = theme.ga;
+if ga
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    script(async, src='https://www.googletagmanager.com/gtag/js?id=' + ga)
+    script
+        | window.dataLayer = window.dataLayer || [];
+        | function gtag(){dataLayer.push(arguments);}
+        | gtag('js', new Date());
+        | gtag('config', '#{ga}');
+
+//- Snippet B: Main Body Script - Theme Switcher Logic
+script.
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.querySelector('.theme-toggle');
+      
+      if (!themeToggle) return;
+      
+      const getCurrentTheme = () => {
+        return document.documentElement.getAttribute('data-theme') || 'light';
+      };
+      
+      const updateUI = (theme) => {
+        const isDark = theme === 'dark';
+        themeToggle.setAttribute('aria-pressed', isDark.toString());
+      };
+      
+      const setTheme = (theme) => {
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.style.colorScheme = theme;
+        
+        const pageWrapper = document.getElementById('page-wrapper');
+        if (pageWrapper) {
+          pageWrapper.setAttribute('data-theme', theme);
+        }
+        
+        // Find and remove the temporary anti-flicker style tag if it exists.
+        // This ensures the main stylesheet takes full control after the initial load.
+        const antiFlickerStyle = document.getElementById('anti-flicker-style');
+        if (antiFlickerStyle) {
+          antiFlickerStyle.remove();
+        }
+        
+        localStorage.setItem('theme', theme);
+        updateUI(theme);
+      };
+      
+      const toggleTheme = () => {
+        const current = getCurrentTheme();
+        const newTheme = current === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+      };
+      
+      updateUI(getCurrentTheme());
+      
+      themeToggle.addEventListener('click', toggleTheme);
+      
+      if (window.matchMedia) {
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        mediaQuery.addEventListener('change', function(e) {
+          if (!localStorage.getItem('theme')) {
+            const theme = e.matches ? 'dark' : 'light';
+            setTheme(theme);
+          }
+        });
+      }
+    });
+  })();
+
+//- Search Dialog Control - Minimal UI JavaScript (Separate from Search Logic)
+if theme.search && theme.search.enable
+  script.
+    (function() {
+      document.addEventListener('DOMContentLoaded', function() {
+        const searchToggle = document.querySelector('.search-toggle');
+        const searchDialog = document.querySelector('#search-dialog');
+        const searchCloseBtn = document.querySelector('.search-dialog__close');
+        const searchInput = document.querySelector('#search-input');
+        
+        if (!searchToggle || !searchDialog) return;
+        
+        searchToggle.addEventListener('click', function() {
+          searchDialog.showModal();
+          setTimeout(() => {
+            if (searchInput) searchInput.focus();
+          }, 100);
+        });
+        
+        if (searchCloseBtn) {
+          searchCloseBtn.addEventListener('click', function() {
+            searchDialog.close();
+          });
+        }
+        
+        searchDialog.addEventListener('click', function(event) {
+          if (event.target === searchDialog) {
+            searchDialog.close();
+          }
+        });
+        
+        searchDialog.addEventListener('keydown', function(event) {
+          if (event.key === 'Escape') {
+            searchDialog.close();
+          }
+        });
+        
+        searchDialog.addEventListener('close', function() {
+          if (searchInput) {
+            searchInput.value = '';
+            const searchResults = document.querySelector('#search-results .search-results__list');
+            if (searchResults) searchResults.innerHTML = '';
+            const loading = document.querySelector('.search-results__loading');
+            const empty = document.querySelector('.search-results__empty');
+            if (loading) loading.hidden = true;
+            if (empty) empty.hidden = true;
+          }
+        });
+      });
+    })();
+    
+  //- Load Search Functionality JavaScript
+  script(src=url_for('js/search.js'), defer)
+
+//- Back to Top Button JavaScript
+script.
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      const backToTopBtn = document.querySelector('.back-to-top');
+      
+      if (!backToTopBtn) return;
+      
+      const toggleButtonVisibility = () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const shouldShow = scrollTop > 200;
+        
+        if (shouldShow) {
+          backToTopBtn.classList.add('is-visible');
+        } else {
+          backToTopBtn.classList.remove('is-visible');
+        }
+      };
+      
+      let ticking = false;
+      const handleScroll = () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            toggleButtonVisibility();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      };
+      
+      const scrollToTop = (event) => {
+        event.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      };
+      
+      window.addEventListener('scroll', handleScroll);
+      backToTopBtn.addEventListener('click', scrollToTop);
+      
+      toggleButtonVisibility();
+    });
+  })();
+

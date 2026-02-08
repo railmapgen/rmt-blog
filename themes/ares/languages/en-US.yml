@@ -1,0 +1,47 @@
+menu:
+  home: HOME
+  archive: ARCHIVE
+  tags: TAGS
+  categories: CATEGORIES
+  friends: BLOGROLL
+  about: ABOUT
+  github: GITHUB
+  rss: RSS
+  portfolio: PORTFOLIO
+nav:
+  search: Search
+  search_placeholder: Search...
+  current_language: English
+  languages:
+    zh-CN: 简体中文
+    zh-TW: 繁體中文
+    ja-JP: 日本語
+    ko-KR: 한국어
+    en-US: English
+  more: MORE
+  close: CLOSE
+search:
+  close: Close
+  description: Enter keywords to search posts
+  results: Search Results
+  no_results: No results found
+  loading: Loading...
+code:
+  expand: Expand
+  fold: Fold
+  copy: Copy
+  copied: Copied
+  copy_failed: Copy failed
+friendlinks: Blogrolls
+archive_title: Archive
+tags_title: Tags
+tag_page_description: "A list of all articles with the '%s' tag."
+categories_title: Categories
+category_page_description: "A list of all articles in the '%s' category."
+prev: PREV
+next: NEXT
+prev_post: PREV POST
+next_post: NEXT POST
+more: ...MORE
+translated: Translate · Original Link
+reply_to: Reply to

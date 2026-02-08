@@ -1,0 +1,54 @@
+include mixins/nav
+include mixins/icons
+include mixins/social-utils
+
+nav.site-nav
+    .nav-main
+        .nav-primary
+            if theme.nav.primary.links && theme.nav.primary.links.length
+                ul.nav-list.hidden-mobile
+                    each item in theme.nav.primary.links
+                        li.nav-item
+                            +nav-link(item)
+            
+            if theme.nav.primary.buttons && theme.nav.primary.buttons.length
+                .nav-tools
+                    each button in theme.nav.primary.buttons
+                        if button.component === 'language-switcher'
+                            +language-switcher()
+        
+            .nav-controls 
+                .more-menu.hidden-mobile
+                    +more-menu()
+                
+                if theme.search && theme.search.enable
+                    button.search-toggle(type="button", aria-label=__('nav.search'), title=__('nav.search'))
+                        +icon-search()
+                
+                +theme-switcher()
+                
+                details.mobile-menu-details.hidden-desktop
+                    summary.hamburger-menu(aria-label=__('nav.menu'))
+                        +icon-bars()
+                        span.menu-text= __('nav.menu')
+                    
+                    .mobile-menu-dropdown
+                        ul.mobile-nav-list
+                            each item in [...theme.nav.primary.links, ...theme.nav.secondary.links]
+                                li.mobile-nav-item
+                                    if item.type === 'internal'
+                                        - var fullPath = page.lang === theme.default_lang ? item.path : `/${page.lang}${item.path}`
+                                        a.mobile-nav-link(href=url_for(fullPath))
+                                            != __(`menu.${item.key}`)
+                                    else if item.type === 'external'
+                                        - var relAttr = "noopener noreferrer" + (isSocialMediaUrl(item.path) ? " me" : "")
+                                        a.mobile-nav-link(href=item.path target="_blank" rel=relAttr)
+                                            != __(`menu.${item.key}`)
+                                            +icon-external-link()
+        
+        if theme.nav.secondary && theme.nav.secondary.buttons && theme.nav.secondary.buttons.length
+            .nav-secondary-buttons
+                each button in theme.nav.secondary.buttons
+                    if button.component
+                        +nav-button(button)
+    

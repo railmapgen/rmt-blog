@@ -1,0 +1,73 @@
+include icons
+include social-utils
+
+mixin nav-link(item)
+    if item.type === 'internal'
+        - var fullPath = page.lang === theme.default_lang ? item.path : `/${page.lang}${item.path}`
+        - var act = "/" + page.current_url === fullPath
+        a.nav-link(class={active: act} href=url_for(fullPath))
+            != __(`menu.${item.key}`)
+    else if item.type === 'external'
+        - var relAttr = "noopener noreferrer" + (isSocialMediaUrl(item.path) ? " me" : "")
+        a.nav-link(href=item.path target="_blank" rel=relAttr)
+            != __(`menu.${item.key}`)
+            +icon-external-link()
+
+mixin nav-button(button)
+    case button.component
+        when 'language-switcher'
+            +language-switcher()
+        when 'theme-switcher'
+            +theme-switcher()
+        default
+            button(type="button" class=`nav-button-${button.key}`)
+                if button.icon
+                    i(class=button.icon)
+                span!= __(button.key)
+
+mixin language-switcher()
+    .language-menu
+        button.language-toggle(type="button")
+            +icon-globe()
+            span!= __('nav.current_language')
+        .language-dropdown
+            each lang in theme.languages || ['zh-CN', 'zh-TW', 'ja-JP', 'ko-KR', 'en-US']
+                if lang !== page.lang
+                    if page.layout === 'post'
+                        - var targetPath = page.translations && page.translations[lang] ? page.translations[lang] : null
+                        if targetPath
+                            a.language-option(href=url_for(targetPath))
+                                != __('nav.languages.' + lang)
+                        else if page.from
+                            a.language-option(href=page.from)
+                                != __('nav.languages.' + lang)
+                    else
+                        - var targetPath = page.canonical_path.split('/').slice(page.lang === theme.default_lang ? 0 : 1).join('/')
+                        - var switchPath = lang === theme.default_lang ? `/${targetPath}` : `/${lang}/${targetPath}`
+                        a.language-option(href=url_for(switchPath.replace(/\/+$/, '')))
+                            != __('nav.languages.' + lang)
+
+mixin more-menu()
+    button.more-toggle(type="button")
+        span!= __('nav.more')
+        +icon-chevron-down()
+    .more-dropdown
+        ul.dropdown-list
+            if theme.nav.secondary && theme.nav.secondary.links
+                each item in theme.nav.secondary.links
+                    li.dropdown-item
+                        if item.type === 'internal'
+                            +nav-link(item)
+                        else if item.type === 'external'
+                            - var relAttr = "noopener noreferrer" + (isSocialMediaUrl(item.path) ? " me" : "")
+                            a.dropdown-link(href=item.path target="_blank" rel=relAttr)
+                                != __(`menu.${item.key}`)
+                                +icon-external-link()
+
+mixin theme-switcher()
+    .theme-switcher
+        button.theme-toggle(type="button" role="switch" aria-pressed="false" aria-label="切换主题")
+            .theme-icon.moon-icon
+                +icon-moon()
+            .theme-icon.sun-icon
+                +icon-sun()

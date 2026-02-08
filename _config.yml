@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Rail Map Toolkit
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author: Rail Map Toolkit team
 language:
   - zh-CN
   - zh-TW
@@ -16,7 +16,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: http://railmapgen.org/blog
 permalink: :lang/:title/
 permalink_defaults:
 pretty_urls:
@@ -100,7 +100,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: ares
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

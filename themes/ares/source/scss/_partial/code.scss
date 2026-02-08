@@ -1,0 +1,220 @@
+@use "../variables" as *;
+
+figure.highlight {
+  position: relative;
+  margin: 1em 0;
+  border-radius: $border-radius;
+  background-color: var(--code-background);
+
+  figcaption {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    padding: 0.5em 1em;
+    background: var(--surface-interactive);
+    border-bottom: 1px solid var(--border-primary);
+    gap: 1em;
+    
+    .info {
+      display: flex;
+      align-items: center;
+      gap: 0.8em;
+      flex: 1;
+      
+      .filename {
+        font-family: $code-font-family;
+        font-size: var(--font-size-code);
+        color: var(--text-tertiary);
+      }
+      
+      .lang-name {
+        color: var(--text-secondary);
+        font-size: var(--font-size-code);
+        text-transform: uppercase;
+      }
+
+      .source-link {
+        color: var(--text-tertiary);
+        text-decoration: none;
+        
+        &:hover {
+          color: $primary-color;
+          text-decoration: underline;
+        }
+      }
+    }
+    
+    .actions {
+      display: flex;
+      gap: 0.5em;
+      
+      button {
+        padding: 0.3em 0.6em;
+        font-size: var(--font-size-code);
+        color: var(--text-secondary);
+        background: transparent;
+        border: 1px solid var(--border-primary);
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        
+        &:hover {
+          color: $primary-color;
+          background: var(--surface-interactive-hover);
+        }
+        
+        &.copied {
+          color: #2ecc71;
+          border-color: #2ecc71;
+        }
+      }
+    }
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .gutter,
+  .code {
+    padding: 1em 0;
+    
+    pre {
+      margin: 0;
+      padding: 0 1em;
+      line-height: 1.5;
+      
+      .line {
+        min-height: 1.5em;
+      }
+    }
+  }
+
+  .gutter {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    width: 40px;
+    background: var(--surface-interactive);
+    border-right: 1px solid var(--border-primary);
+    
+    pre {
+      text-align: right;
+      background: var(--surface-interactive);
+      color: var(--text-tertiary);
+    }
+    
+    &.no-line-number {
+      display: none;
+    }
+  }
+
+  .code {
+    position: relative;
+    background-color: var(--code-background);
+    
+    pre .line.marked {
+      background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+    }
+  }
+
+  &.folded {
+    max-height: 600px;
+    overflow-y: hidden;
+    
+    &:has(.code pre) {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 30px;
+        background: linear-gradient(
+          transparent,
+          $light-gray
+        );
+        pointer-events: none;
+      }
+    }
+
+    &:not(:has(.code pre:after)) {
+      max-height: unset; 
+      overflow-y: visible;
+    }
+  }
+}
+
+pre {
+  color: $dark-gray;
+  font-family: $code-font-family;
+  
+  .function .keyword,
+  .constant { color: #0092db; }
+  .keyword,
+  .attribute { color: $code-color; }
+  .number,
+  .literal { color: #ae81ff; }
+  .tag,
+  .tag .title,
+  .change,
+  .winutils,
+  .flow,
+  .lisp .title,
+  .clojure .built_in,
+  .nginx .title,
+  .tex .special { color: #2973b7; }
+  .symbol,
+  .symbol .string,
+  .value,
+  .regexp { color: $primary-color; }
+  .title { color: #83B917; }
+  .tag .value,
+  .string,
+  .subst,
+  .haskell .type,
+  .preprocessor,
+  .ruby .class .parent,
+  .built_in,
+  .sql .aggregate,
+  .django .template_tag,
+  .django .variable,
+  .smalltalk .class,
+  .javadoc,
+  .django .filter .argument,
+  .smalltalk .localvars,
+  .smalltalk .array,
+  .attr_selector,
+  .pseudo,
+  .addition,
+  .stream,
+  .envvar,
+  .apache .tag,
+  .apache .cbracket,
+  .tex .command,
+  .prompt { color: $primary-color; }
+  .comment,
+  .java .annotation,
+  .python .decorator,
+  .template_comment,
+  .pi,
+  .doctype,
+  .shebang,
+  .apache .sqbracket,
+  .tex .formula { color: #b3b3b3; }
+  .deletion { color: #BA4545; }
+  .coffeescript .javascript,
+  .javascript .xml,
+  .tex .formula,
+  .xml .javascript,
+  .xml .vbscript,
+  .xml .css,
+  .xml .cdata { opacity: 0.5; }
+}

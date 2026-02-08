@@ -1,0 +1,460 @@
+@use "sass:color";
+@use "../variables" as *;
+@use "../mixins" as *;
+
+// 统一的导航项基础样式
+%nav-item-base {
+  display: inline-flex;
+  align-items: center;
+  color: $text-color;
+  text-decoration: none;
+  font-size: var(--font-size-nav);
+  line-height: 1;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  border-bottom: 2px solid transparent;
+  transition: all $transition-duration $transition-timing;
+  cursor: pointer;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+
+  &:hover {
+    color: $primary-color;
+    border-bottom-color: $primary-color;
+  }
+
+  .icon {
+    margin-left: 0.3rem;
+    width: 0.875em;
+    height: 0.875em;
+    flex-shrink: 0;
+  }
+}
+
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.hidden-desktop {
+  @include desktop {
+    display: none !important;
+  }
+}
+
+.site-nav {
+  width: auto;
+
+  .nav-main {
+    @include flex(row, flex-end, center);
+    max-width: $content-width;
+    margin: 0 auto;
+    padding: 0 1rem;
+    height: 4rem;
+  }
+
+  .nav-controls {
+    @include flex(row, flex-end, center);
+    gap: 0.5rem;
+
+    // 使用HTML details元素的移动端菜单 - 只在移动端显示
+    .mobile-menu-details {
+      position: relative;
+      
+      // 重置details元素的默认样式 - 使用!important确保覆盖details.scss
+      margin: 0 !important;
+      padding: 0 !important;
+      background: transparent !important;
+      border-radius: 0 !important;
+      border: none !important;
+
+      @include desktop {
+        display: none !important;
+      }
+
+      summary.hamburger-menu {
+        @extend %nav-item-base;
+        width: 2.5rem;
+        justify-content: center;
+        list-style: none;
+        cursor: pointer;
+        
+        // 移除边框和背景色，只保留图标 - 覆盖details.scss的样式
+        border: none !important;
+        background: transparent !important;
+        padding: 0.5rem !important;
+        margin: 0 !important;
+
+        // 隐藏浏览器默认的三角形指示器
+        &::-webkit-details-marker,
+        &::marker {
+          display: none;
+        }
+        
+        // 只在hover时显示颜色变化，不显示边框
+        &:hover {
+          border: none !important;
+          background: transparent !important;
+        }
+
+        // 重置图标的margin
+        .icon-bars {
+          margin-left: 0 !important;
+        }
+
+        .menu-text {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        }
+      }
+
+      .mobile-menu-dropdown {
+        position: absolute;
+        top: calc(100% + 2px);
+        right: 0;
+        background: $background-color;
+        border: 1px solid $border-color;
+        border-radius: $border-radius;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: $z-index-dropdown;
+        min-width: 200px;
+        
+        // 默认隐藏状态
+        display: none;
+        
+        // 动画效果
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        animation: slideInDown 0.2s ease forwards;
+
+        // 创建不可见的桥接区域
+        &::before {
+          content: '';
+          position: absolute;
+          top: -4px;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background: transparent;
+        }
+
+      }
+
+      // 当details关闭时完全隐藏下拉菜单
+      &:not([open]) .mobile-menu-dropdown {
+        display: none !important;
+      }
+
+      // 当details打开时显示下拉菜单
+      &[open] .mobile-menu-dropdown {
+        display: block !important;
+      }
+
+      .mobile-nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .mobile-nav-item {
+        border-bottom: 1px solid var(--border-secondary);
+        
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      .mobile-nav-link {
+        @include flex(row, space-between, center);
+        padding: 0.75rem 1rem;
+        color: $text-color;
+        text-decoration: none;
+        font-size: var(--font-size-nav);
+        line-height: 1;
+        transition: background-color 0.15s ease, color 0.15s ease;
+
+        &:hover {
+          background-color: var(--surface-interactive);
+          color: var(--color-primary);
+        }
+
+        .icon {
+          margin-left: 0.5rem;
+          width: 0.875em;
+          height: 0.875em;
+          opacity: 0.7;
+          flex-shrink: 0;
+        }
+      }
+
+      // 第一个和最后一个链接的圆角
+      .mobile-nav-item:first-child .mobile-nav-link {
+        border-radius: $border-radius $border-radius 0 0;
+      }
+
+      .mobile-nav-item:last-child .mobile-nav-link {
+        border-radius: 0 0 $border-radius $border-radius;
+      }
+
+    }
+  }
+
+  // 动画关键帧
+  @keyframes slideInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-8px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes slideOutUp {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-8px) scale(0.95);
+    }
+  }
+
+  .nav-primary {
+    @include flex(row, flex-start, center);
+    gap: 0.5rem;
+
+    .nav-list {
+      @include flex(row, flex-start, center);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      gap: 0.5rem;
+      align-content: center;
+    }
+
+    .nav-link {
+      @extend %nav-item-base;
+    }
+  }
+  
+  .nav-tools {
+    @include flex(row, flex-end, center);
+    gap: 0.5rem;
+  }
+
+  .more-menu {
+    position: relative;
+
+    // 纯CSS实现下拉菜单 - 鼠标悬停或键盘聚焦时显示
+    &:hover .more-dropdown,
+    &:focus-within .more-dropdown {
+      display: block !important;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .more-toggle {
+      @extend %nav-item-base;
+      gap: 0.5rem;
+      
+      &:focus {
+        outline: 2px solid $primary-color;
+        outline-offset: 2px;
+      }
+    }
+
+    .more-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 2px);
+      right: 0;
+      background-color: $background-color;
+      border: 1px solid $border-color;
+      border-radius: $border-radius;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      min-width: 200px;
+      z-index: $z-index-dropdown;
+      
+      // 添加淡入动画效果
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+
+      // 创建不可见的桥接区域，解决hover间隙问题
+      &::before {
+        content: '';
+        position: absolute;
+        top: -4px;  // 覆盖间隙区域
+        left: 0;
+        right: 0;
+        height: 4px;  // 桥接区域高度
+        background: transparent;
+      }
+
+      .dropdown-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .dropdown-item {
+        margin: 0;
+        padding: 0;
+
+        .nav-link, .dropdown-link {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.75rem 1rem;
+          color: $text-color;
+          text-decoration: none;
+          font-size: var(--font-size-nav);
+          line-height: 1;
+          min-height: 2.5rem;
+          transition: background-color $transition-duration $transition-timing;
+  
+          &:hover {
+            color: var(--color-primary);
+            background-color: var(--surface-interactive-hover);
+          }
+  
+          .icon {
+            width: 0.875em;
+            height: 0.875em;
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+  }
+
+  // 旧的mobile-menu-container已替换为details元素实现
+
+
+  .language-menu {
+    position: relative;
+
+    // 纯CSS实现语言切换下拉菜单
+    &:hover .language-dropdown,
+    &:focus-within .language-dropdown {
+      display: block !important;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .language-toggle {
+    @extend %nav-item-base;
+    gap: 0.2rem;
+    
+    &:focus {
+      outline: 2px solid $primary-color;
+      outline-offset: 2px;
+    }
+
+    .icon {
+      margin-right: 0.3rem;
+      margin-left: 0;
+      width: 0.875em;
+      height: 0.875em;
+      flex-shrink: 0;
+    }
+  }
+
+  .language-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 2px);
+    right: 0;
+    background: $background-color;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: $z-index-dropdown;
+    min-width: 120px;
+
+    // 初始状态和动画
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+
+    // 创建不可见的桥接区域，解决hover间隙问题
+    &::before {
+      content: '';
+      position: absolute;
+      top: -4px;  // 覆盖间隙区域
+      left: 0;
+      right: 0;
+      height: 4px;  // 桥接区域高度
+      background: transparent;
+    }
+
+    .language-option {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: $text-color;
+      text-decoration: none;
+      font-size: var(--font-size-nav);
+      line-height: 1;
+      transition: background-color 0.15s ease, color 0.15s ease;
+      border-bottom: 1px solid var(--border-secondary);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background-color: var(--surface-interactive);
+        color: var(--color-primary);
+      }
+
+      &:first-child {
+        border-radius: $border-radius $border-radius 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 $border-radius $border-radius;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .site-nav {
+    .nav-primary {
+      flex: 1;
+      @include flex(row, center, center);
+    }
+
+    // 确保移动端菜单在移动设备上显示
+    .mobile-menu-details {
+      display: block !important;
+    }
+  }
+
+  .nav-main {
+    @include flex(row, center, center);
+    padding: 0 1rem;
+  }
+
+  // 旧的移动端导航样式已替换为基于details元素的新实现
+}
+
+@include desktop {
+  .hidden-desktop {
+    display: none !important;
+  }
+}
