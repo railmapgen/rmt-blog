@@ -20,8 +20,6 @@ tags:
 
 ![地下鉄路線図生成器2019年リリースフォーラムスクリーンショット](/rmt-blog/images/rmg-2019-online.jpg)
 
-その春節から、私たちは共に7年間の旅を歩んできました。この7年間、多くの「古い友人」の皆様が各バージョンの更新を支え、貴重な意見を提供してくださったおかげで、工具が進化を遂げました。また、最近「新たに乗車」された皆様を心から歓迎します。この創造の旅を共に始められることを嬉しく思います。
-
 これは[@wongchito](https://github.com/wongchito)、[@thekingofcity](https://github.com/thekingofcity)、[@langonginc](https://github.com/langonginc)、[@xhcminecraft](https://github.com/xhcminecraft)各位のたゆまぬ尽力と、リソース管理者である[@Swiftiecott](https://github.com/Swiftiecott)、[@linchen1965](https://github.com/linchen1965)、[@28yfang](https://github.com/28yfang)、[@Win-Tsk](https://github.com/Windows-Taskmgr)の全面的なサポートによるものです。あの春以来、私たちは丸々7年間、共に歩んできました。
 
 この七年の間、各バージョンの更新を支え、運用してくださった無数の「古い友人」の皆様に深く感謝します。皆様の専門的な意見によって工具は不断に改善されてきました。また、最近新たに参加された皆様を心より歓迎します。皆さんと共にこの創作の旅を始められることを嬉しく思います。
