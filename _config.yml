@@ -14,11 +14,11 @@ language:
   - ja-JP
   - ko-KR
   - en-US
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://railmapgen.org/blog
+url: http://railmapgen.org/rmt-blog
 permalink: :lang/:title/
 permalink_defaults:
 pretty_urls:
