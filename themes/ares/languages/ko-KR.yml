@@ -13,11 +13,11 @@ nav:
   search_placeholder: 검색...
   current_language: 한국어
   languages:
-    zh-CN: 중국어(간체)
-    zh-TW: 중국어(번체)
-    ja-JP: 일본어
+    zh-CN: 简体中文
+    zh-TW: 繁體中文
+    ja-JP: 日本語
     ko-KR: 한국어
-    en-US: 영어
+    en-US: English
   more: 더 보기
   close: 닫기
 search:

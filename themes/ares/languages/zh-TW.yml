@@ -11,9 +11,9 @@ menu:
 nav:
   search: 搜尋
   search_placeholder: 搜尋...
-  current_language: 中文
+  current_language: 繁體中文
   languages:
-    zh-CN: 簡體中文
+    zh-CN: 简体中文
     zh-TW: 繁體中文
     ja-JP: 日本語
     ko-KR: 한국어
