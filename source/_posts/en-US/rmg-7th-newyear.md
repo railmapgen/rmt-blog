@@ -36,6 +36,8 @@ Event window: February 15, 2026 – February 23, 2026 (UTC+8). Dates may open sl
 - Ultimate subscription **special price**: Event price ¥88 (regular ¥99).
 - Extra bonus days: During the event, any subscription or redemption will receive an additional 45 days on top of the existing 45-day bonus.
 
+> 💡 Tip: If you purchased and redeemed a subscription between February 1–10, 2026, feel free to email a screenshot of your record and your account email address to thekingofcity@railmapgen.org — we’ll add an extra 60 days to the corresponding subscription.
+
 ---
 
 🗺️ Next Stops: Feature Expansions & Smoother Experience
