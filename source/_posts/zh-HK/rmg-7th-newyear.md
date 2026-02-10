@@ -1,7 +1,7 @@
 ---
 title: 繪就七載，共赴新春 | 7週年暨新春特別活動
 date: 2026-02-06 00:00:00
-lang: zh-TW
+lang: zh-HK
 tags:
   - RMG
   - 春節
@@ -20,7 +20,9 @@ tags:
 
 ![生成器19年上線論壇截圖](/rmt-blog/images/rmg-2019-online.jpg)
 
-從那個春天起，我們已並肩走過了整整七年。這七年間，感謝無數**老朋友**在每一個版本更迭中的支持與運轉，是你們的專業反饋讓工具包不斷完善；同時也熱烈歡迎近期**新上車**的夥伴，很高興能與大家共同開啟這段創作旅程。
+正是來自[@wongchito](https://github.com/wongchito)、[@thekingofcity](https://github.com/thekingofcity)、[@langonginc](https://github.com/langonginc)和[@xhcminecraft](https://github.com/xhcminecraft)的辛勤付出，以及資源管理員們：[@Swiftiecott](https://github.com/Swiftiecott)、[@linchen1965](https://github.com/linchen1965)、[@28yfang](https://github.com/28yfang)、[@Win-Tsk](https://github.com/Windows-Taskmgr)的全力支持。從那個春天開始，我們已經攜手走過了整整七年。
+
+這七年間，感謝無數**老朋友**在每一個版本更迭中的支持與運轉，是你們的專業反饋讓工具包不斷完善；同時也熱烈歡迎近期**新上車**的夥伴，很高興能與大家共同開啟這段創作旅程。
 
 為了紀念這個特殊的始發時刻，也為了回饋大家的熱情，我們將這份週年的喜悅轉化為最直接的限時福利。
 

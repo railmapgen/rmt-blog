@@ -20,7 +20,9 @@ You might be curious why we chose this moment for our celebration. Seven years a
 
 ![Generator launch screenshot from 2019](/rmt-blog/images/rmg-2019-online.jpg)
 
-Since that spring, we’ve journeyed together for seven full years. During this time, we deeply appreciate the countless **longtime friends** who have supported and contributed to every version update. Your professional feedback has continuously improved the toolkit. At the same time, we warmly welcome the **newcomers** who have recently joined us — we’re thrilled to embark on this creative journey with you.
+This celebration is made possible by the hard work of [@wongchito](https://github.com/wongchito), [@thekingofcity](https://github.com/thekingofcity), [@langonginc](https://github.com/langonginc) and [@xhcminecraft](https://github.com/xhcminecraft), and the full support of our resource administrators: [@Swiftiecott](https://github.com/Swiftiecott), [@linchen1965](https://github.com/linchen1965), [@28yfang](https://github.com/28yfang) and [@Win-Tsk](https://github.com/Windows-Taskmgr). Since that spring, we’ve journeyed together for seven full years.
+
+Over these seven years, we thank the countless **longtime friends** who have supported and kept things running through every version update—your professional feedback has continuously improved the toolkit. At the same time, we warmly welcome the **newcomers** who have recently come aboard — we’re thrilled to embark on this creative journey with you.
 
 To commemorate this special starting point and to thank everyone for their enthusiasm, we’re turning this anniversary joy into the most direct, time-limited benefits.
 

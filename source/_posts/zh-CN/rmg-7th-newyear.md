@@ -20,7 +20,9 @@ tags:
 
 ![生成器19年上线论坛截图](/rmt-blog/images/rmg-2019-online.jpg)
 
-从那个春天起，我们已并肩走过了整整七年。这七年间，感谢无数**老朋友**在每一个版本更迭中的支持与运转，是你们的专业反馈让工具包不断完善；同时也热烈欢迎近期**新上车**的伙伴，很高兴能与大家共同开启这段创作旅程。
+正是来自[@wongchito](https://github.com/wongchito)、[@thekingofcity](https://github.com/thekingofcity)、[@langonginc](https://github.com/langonginc)和[@xhcminecraft](https://github.com/xhcminecraft)的辛勤付出，以及资源管理员们：[@Swiftiecott](https://github.com/Swiftiecott)、[@linchen1965](https://github.com/linchen1965)、[@28yfang](https://github.com/28yfang)、[@Win-Tsk](https://github.com/Windows-Taskmgr)的全力支持。从那个春天开始，我们已经携手走过了整整七年。
+
+这七年间，感谢无数**老朋友**在每一个版本更迭中的支持与运转，是你们的专业反馈让工具包不断完善；同时也热烈欢迎近期**新上车**的伙伴，很高兴能与大家共同开启这段创作旅程。
 
 为了纪念这个特殊的始发时刻，也为了回馈大家的热情，我们将这份周年的喜悦转化为最直接的限时福利。
 

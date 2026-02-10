@@ -20,7 +20,9 @@ tags:
 
 ![생성기 2019년 출시 포럼 스크린샷](/rmt-blog/images/rmg-2019-online.jpg)
 
-그 봄부터 우리는 함께 7년의 여정을 걸어왔습니다. 이 7년 동안, 수많은 "오랜 친구"들이 각 버전의 업데이트를 지원하고, 소중한 피드백을 제공해 주신 덕분에 도구가 지속적으로 발전할 수 있었습니다. 또한 최근 "새롭게 탑승"하신 여러분을 진심으로 환영합니다. 이 창작 여정을 함께 시작할 수 있어 매우 기쁩니다.
+[@wongchito](https://github.com/wongchito)、[@thekingofcity](https://github.com/thekingofcity)、[@langonginc](https://github.com/langonginc)、[@xhcminecraft](https://github.com/xhcminecraft)의 헌신적인 노력과, 리소스 관리자분들인 [@Swiftiecott](https://github.com/Swiftiecott)、[@linchen1965](https://github.com/linchen1965)、[@28yfang](https://github.com/28yfang)、[@Win-Tsk](https://github.com/Windows-Taskmgr)의 전폭적인 지원 덕분에 오늘의 우리가 있습니다. 그 봄부터 시작해, 우리는 어느덧 7년이라는 시간을 함께 걸어왔습니다.
+
+이 7년 동안 수많은 **오랜 친구들**이 매 버전 업데이트마다 보내주신 지원과 운영 덕분에 프로젝트가 계속 발전할 수 있었고, 여러분의 전문적인 피드백이 툴킷을 더욱 완성도 있게 만들어 주었습니다. 또한 최근에 합류한 **새로운 동료들**도 진심으로 환영합니다. 여러분과 함께 이 창작의 여정을 시작하게 되어 매우 기쁩니다.
 
 이 특별한 출발의 순간을 기념하고, 여러분의 열정에 감사의 마음을 담아, 기간 한정 혜택을 준비했습니다.
 

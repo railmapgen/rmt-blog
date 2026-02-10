@@ -31,7 +31,7 @@ mixin language-switcher()
             +icon-globe()
             span!= __('nav.current_language')
         .language-dropdown
-            each lang in theme.languages || ['zh-CN', 'zh-TW', 'ja-JP', 'ko-KR', 'en-US']
+            each lang in theme.languages || ['zh-CN', 'zh-HK', 'ja-JP', 'ko-KR', 'en-US']
                 if lang !== page.lang
                     if page.layout === 'post'
                         - var targetPath = page.translations && page.translations[lang] ? page.translations[lang] : null
