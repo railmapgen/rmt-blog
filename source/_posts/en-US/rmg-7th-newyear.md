@@ -1,6 +1,6 @@
 ---
 title: Drawing Seven Years, Welcoming the New Spring | 7th Anniversary & Lunar New Year Special
-date: 2026-02-06 00:00:00
+date: 2026-02-10 00:00:00
 lang: en-US
 tags:
   - RMG
@@ -44,10 +44,10 @@ Event window: February 15, 2026 – February 23, 2026 (UTC+8). Dates may open sl
 
 Looking ahead, we’ve already reserved several priority enhancements for future releases:
 
-- **Bezier curves**: The generator will support more flexible curve transitions, replacing rigid polylines with smoother, silk-like routes.
-- **Real-world map basemaps**: The generator will support drawing based on geographic coordinates, aligning your virtual routes precisely with the real world.
+- **Bezier curves**: The painter will support more flexible curve transitions, replacing rigid polylines with smoother, silk-like routes.
+- **Real-world map basemaps**: The painter will support drawing based on geographic coordinates, aligning your virtual routes precisely with the real world.
 - **Shanghai Metro (2024) visual style**: The generator will deeply replicate the latest visual guidelines from Shanghai Metro, offering a modern and trendy aesthetic.
 
 Seven years is just one segment of the journey — there are many more tracks ahead. We’ll continue to act as your **dispatcher**, supporting every creative idea.
 
-Wishing you a happy Lunar New Year and joyful mapmaking!
+Wishing you a happy Lunar New Year and happy mapmaking!
