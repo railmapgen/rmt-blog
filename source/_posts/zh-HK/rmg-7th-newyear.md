@@ -14,13 +14,13 @@ tags:
 
 ---
 
-🚉 始發站：七年同行，感謝有你
+## 🚉 始發站：七年同行，感謝有你
 
 大家可能好奇為什麼我們將慶典定在此時，那是因為七年前的2019年2月15日，正是**地鐵路線圖生成器**正式上線的日子。
 
 ![生成器19年上線論壇截圖](/rmt-blog/images/rmg-2019-online.jpg)
 
-正是來自[@wongchito](https://github.com/wongchito)、[@thekingofcity](https://github.com/thekingofcity)、[@langonginc](https://github.com/langonginc)和[@xhcminecraft](https://github.com/xhcminecraft)的辛勤付出，以及資源管理員們：[@Swiftiecott](https://github.com/Swiftiecott)、[@linchen1965](https://github.com/linchen1965)、[@28yfang](https://github.com/28yfang)、[@Win-Tsk](https://github.com/Windows-Taskmgr)的全力支持。從那個春天開始，我們已經攜手走過了整整七年。
+是來自[@wongchito](https://github.com/wongchito)、[@thekingofcity](https://github.com/thekingofcity)、[@langonginc](https://github.com/langonginc)和[@xhcminecraft](https://github.com/xhcminecraft)的辛勤付出，以及資源管理員們：[@Swiftiecott](https://github.com/Swiftiecott)、[@linchen1965](https://github.com/linchen1965)、[@28yfang](https://github.com/28yfang)、[@Win-Tsk](https://github.com/Windows-Taskmgr)的全力支持。從那個春天開始，我們已經攜手走過了整整七年。
 
 這七年間，感謝無數**老朋友**在每一個版本更迭中的支持與運轉，是你們的專業反饋讓工具包不斷完善；同時也熱烈歡迎近期**新上車**的夥伴，很高興能與大家共同開啟這段創作旅程。
 
@@ -28,7 +28,7 @@ tags:
 
 ---
 
-🚅 臨時特急：限時免費，訂閱特價
+## 🚅 臨時特急：限時免費，訂閱特價
 
 活動時間：2026年2月15日 - 2月23日（東八區） (可能會根據實際情況提早開啟或延遲截止)
 
@@ -40,7 +40,7 @@ tags:
 
 ---
 
-🗺️ 前方到站：功能延展，絲滑升級
+## 🗺️ 前方到站：功能延展，絲滑升級
 
 在未來的路網規劃中，我們已預留了多個重點功能：
 

@@ -14,7 +14,7 @@ The rhythm of the seasons returns, and a fresh year begins. Wishing every one of
 
 ---
 
-🚉 Origin Station: Seven Years Together — Thank You
+## 🚉 Origin Station: Seven Years Together — Thank You
 
 You might be curious why we chose this moment for our celebration. Seven years ago, on February 15, 2019, the **Rail Map Generator** officially launched.
 
@@ -28,7 +28,7 @@ To commemorate this special starting point and to thank everyone for their enthu
 
 ---
 
-🚅 Limited Express: Free Access & Subscription Specials
+## 🚅 Limited Express: Free Access & Subscription Specials
 
 Event window: February 15, 2026 – February 23, 2026 (UTC+8). Dates may open slightly earlier or close later depending on circumstances.
 
@@ -40,7 +40,7 @@ Event window: February 15, 2026 – February 23, 2026 (UTC+8). Dates may open sl
 
 ---
 
-🗺️ Next Stops: Feature Expansions & Smoother Experience
+## 🗺️ Next Stops: Feature Expansions & Smoother Experience
 
 Looking ahead, we’ve already reserved several priority enhancements for future releases:
 
