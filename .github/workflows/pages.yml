@@ -10,17 +10,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           # If your repository depends on submodule, please see: https://github.com/actions/checkout
           submodules: recursive
-      - name: Use Node.js 20
+      - name: Use Node.js 22
         uses: actions/setup-node@v4
         with:
-          # Examples: 20, 18.19, >=16.20.2, lts/Iron, lts/Hydrogen, *, latest, current, node
-          # Ref: https://github.com/actions/setup-node#supported-version-syntax
-          node-version: "20"
+          node-version: "22"
       - name: Cache NPM dependencies
         uses: actions/cache@v4
         with:
@@ -33,19 +31,83 @@ jobs:
       - name: Build
         run: npm run build
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./public
-  deploy:
+
+  deploy-pages:
     needs: build
+    runs-on: ubuntu-latest
     permissions:
       pages: write
       id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  deploy-org:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: self-hosted
+    permissions:
+      contents: read
+    steps:
+      - name: Prepare temp directories
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          DOWNLOAD_DIR="$RUNNER_TEMP/rmt-blog-pages-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          EXTRACT_DIR="$RUNNER_TEMP/rmt-blog-public-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          STAGING_DIR="/www/.rmt-blog-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+
+          rm -rf "$DOWNLOAD_DIR" "$EXTRACT_DIR" "$STAGING_DIR"
+          mkdir -p "$DOWNLOAD_DIR" "$EXTRACT_DIR"
+
+      - name: Download pages artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/rmt-blog-pages-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Extract pages artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          DOWNLOAD_DIR="$RUNNER_TEMP/rmt-blog-pages-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          EXTRACT_DIR="$RUNNER_TEMP/rmt-blog-public-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+
+          test -f "$DOWNLOAD_DIR/artifact.tar"
+          tar -xf "$DOWNLOAD_DIR/artifact.tar" -C "$EXTRACT_DIR"
+
+      - name: Deploy to /www/rmt-blog
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          EXTRACT_DIR="$RUNNER_TEMP/rmt-blog-public-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          STAGING_DIR="/www/.rmt-blog-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          TARGET_DIR="/www/rmt-blog"
+
+          mkdir -p "$STAGING_DIR"
+          cp -a "$EXTRACT_DIR"/. "$STAGING_DIR"/
+          chown -R www-data:www-data "$STAGING_DIR"
+          rm -rf "$TARGET_DIR"
+          mv "$STAGING_DIR" "$TARGET_DIR"
+
+      - name: Cleanup
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          DOWNLOAD_DIR="$RUNNER_TEMP/rmt-blog-pages-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          EXTRACT_DIR="$RUNNER_TEMP/rmt-blog-public-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          STAGING_DIR="/www/.rmt-blog-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+
+          rm -rf "$DOWNLOAD_DIR" "$EXTRACT_DIR" "$STAGING_DIR"
