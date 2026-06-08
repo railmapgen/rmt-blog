@@ -1,0 +1,357 @@
+{
+  "generatedAt": "2026-06-07 20:05:06 +08:00",
+  "repository": "railmapgen/rmp-gallery",
+  "actor": "thekingofcity",
+  "timezone": "Asia/Shanghai (UTC+08:00)",
+  "queryRange": {
+    "since": "2026-05-01",
+    "until": "2026-06-07"
+  },
+  "scope": "Only issues and pull requests titled Resources: New work of <city> or Resources: Update work of <city>; Donation issues are excluded from the main metrics.",
+  "sourceSop": "rmp-gallery/docs/resources-issue-review-sop-zh.md",
+  "metrics": {
+    "resourceIssuesClosed": 101,
+    "acceptedIssues": 28,
+    "updateIssues": 74,
+    "newIssues": 27,
+    "resourcePullRequestsClosedOrMerged": 112,
+    "mergedPullRequests": 28,
+    "closedUnmergedPullRequests": 84
+  },
+  "weekly": [
+    {
+      "week": "2026-04-27",
+      "label": "5/1-5/3",
+      "issues": 4,
+      "prs": 4
+    },
+    {
+      "week": "2026-05-04",
+      "label": "5/4-5/10",
+      "issues": 0,
+      "prs": 0
+    },
+    {
+      "week": "2026-05-11",
+      "label": "5/11-5/17",
+      "issues": 0,
+      "prs": 0
+    },
+    {
+      "week": "2026-05-18",
+      "label": "5/18-5/24",
+      "issues": 43,
+      "prs": 51
+    },
+    {
+      "week": "2026-05-25",
+      "label": "5/25-5/31",
+      "issues": 31,
+      "prs": 32
+    },
+    {
+      "week": "2026-06-01",
+      "label": "6/1-6/7",
+      "issues": 23,
+      "prs": 25
+    }
+  ],
+  "issueOutcomes": [
+    {
+      "key": "accepted",
+      "label": "通过/已合入",
+      "count": 28,
+      "percent": 27.7,
+      "color": "#2da44e"
+    },
+    {
+      "key": "need_fixing",
+      "label": "需要修正",
+      "count": 49,
+      "percent": 48.5,
+      "color": "#d1242f"
+    },
+    {
+      "key": "better_version",
+      "label": "已有更优版本",
+      "count": 13,
+      "percent": 12.9,
+      "color": "#0969da"
+    },
+    {
+      "key": "duplicate",
+      "label": "重复提交",
+      "count": 5,
+      "percent": 5.0,
+      "color": "#bf8700"
+    },
+    {
+      "key": "invalid_content",
+      "label": "内容无效",
+      "count": 4,
+      "percent": 4.0,
+      "color": "#8250df"
+    },
+    {
+      "key": "invalid_format",
+      "label": "格式无效",
+      "count": 2,
+      "percent": 2.0,
+      "color": "#6e7781"
+    }
+  ],
+  "issueTypes": [
+    {
+      "type": "New",
+      "count": 27
+    },
+    {
+      "type": "Update",
+      "count": 74
+    }
+  ],
+  "topCities": [
+    {
+      "city": "chongqing",
+      "count": 7
+    },
+    {
+      "city": "guangdongintercity",
+      "count": 7
+    },
+    {
+      "city": "hangzhou",
+      "count": 7
+    },
+    {
+      "city": "jinan",
+      "count": 7
+    },
+    {
+      "city": "dubai",
+      "count": 5
+    },
+    {
+      "city": "kaohsiung",
+      "count": 5
+    },
+    {
+      "city": "guangzhou",
+      "count": 4
+    },
+    {
+      "city": "jinhuayiwuanddongyang",
+      "count": 4
+    },
+    {
+      "city": "shenzhen",
+      "count": 4
+    },
+    {
+      "city": "paris",
+      "count": 3
+    }
+  ],
+  "allCities": [
+    {
+      "city": "chongqing",
+      "count": 7
+    },
+    {
+      "city": "guangdongintercity",
+      "count": 7
+    },
+    {
+      "city": "hangzhou",
+      "count": 7
+    },
+    {
+      "city": "jinan",
+      "count": 7
+    },
+    {
+      "city": "dubai",
+      "count": 5
+    },
+    {
+      "city": "kaohsiung",
+      "count": 5
+    },
+    {
+      "city": "guangzhou",
+      "count": 4
+    },
+    {
+      "city": "jinhuayiwuanddongyang",
+      "count": 4
+    },
+    {
+      "city": "shenzhen",
+      "count": 4
+    },
+    {
+      "city": "paris",
+      "count": 3
+    },
+    {
+      "city": "suzhou",
+      "count": 3
+    },
+    {
+      "city": "xian",
+      "count": 3
+    },
+    {
+      "city": "changchun",
+      "count": 2
+    },
+    {
+      "city": "delhi",
+      "count": 2
+    },
+    {
+      "city": "dongguan",
+      "count": 2
+    },
+    {
+      "city": "lisbon",
+      "count": 2
+    },
+    {
+      "city": "madrid",
+      "count": 2
+    },
+    {
+      "city": "sydney",
+      "count": 2
+    },
+    {
+      "city": "wuhan",
+      "count": 2
+    },
+    {
+      "city": "adelaide",
+      "count": 1
+    },
+    {
+      "city": "algiers",
+      "count": 1
+    },
+    {
+      "city": "Bangkok",
+      "count": 1
+    },
+    {
+      "city": "Barcelona",
+      "count": 1
+    },
+    {
+      "city": "bucharest",
+      "count": 1
+    },
+    {
+      "city": "Chicago",
+      "count": 1
+    },
+    {
+      "city": "daejeon",
+      "count": 1
+    },
+    {
+      "city": "fuzhou",
+      "count": 1
+    },
+    {
+      "city": "guiyang",
+      "count": 1
+    },
+    {
+      "city": "hochiminhcity",
+      "count": 1
+    },
+    {
+      "city": "hohhot",
+      "count": 1
+    },
+    {
+      "city": "huaian",
+      "count": 1
+    },
+    {
+      "city": "lyon",
+      "count": 1
+    },
+    {
+      "city": "metroningmalines2",
+      "count": 1
+    },
+    {
+      "city": "Mexico City",
+      "count": 1
+    },
+    {
+      "city": "mlaga",
+      "count": 1
+    },
+    {
+      "city": "nanjing",
+      "count": 1
+    },
+    {
+      "city": "New York City",
+      "count": 1
+    },
+    {
+      "city": "pyongyang",
+      "count": 1
+    },
+    {
+      "city": "San Francisco",
+      "count": 1
+    },
+    {
+      "city": "shaoxing",
+      "count": 1
+    },
+    {
+      "city": "singapore",
+      "count": 1
+    },
+    {
+      "city": "sydney (ferry service)",
+      "count": 1
+    },
+    {
+      "city": "taipei",
+      "count": 1
+    },
+    {
+      "city": "tianjin",
+      "count": 1
+    },
+    {
+      "city": "vienna",
+      "count": 1
+    },
+    {
+      "city": "wuhu",
+      "count": 1
+    },
+    {
+      "city": "zhenjiang",
+      "count": 1
+    }
+  ],
+  "pullRequestOutcomes": [
+    {
+      "outcome": "已合入",
+      "count": 28,
+      "color": "#2da44e"
+    },
+    {
+      "outcome": "关闭/未合入",
+      "count": 84,
+      "color": "#d1242f"
+    }
+  ]
+}
