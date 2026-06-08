@@ -1,0 +1,248 @@
+{
+  "totalNeedFixingIssues": 49,
+  "classification": "primaryReason is mutually exclusive; reasonTags are multi-label.",
+  "primaryReasons": [
+    {
+      "key": "text",
+      "label": "站名/英文/编号等文字错误",
+      "count": 24,
+      "percent": 49.0,
+      "examples": [
+        {
+          "number": 2784,
+          "city": "sydney",
+          "excerpt": "L4 Westmead - Carlingford 段的 Children’s Hospital 站英文被写成 Children’s Hopsital，与官方图中的 Childrens Hospital 不一致。",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/2784"
+        },
+        {
+          "number": 2994,
+          "city": "daejeon",
+          "excerpt": "官方英文线路图中 Guam 与 Gapcheon 之间的 116 站为 Yuseong Spa，当前投稿图标为 Yuseongoncheon，车站英文名与官方图不一致。",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/2994"
+        },
+        {
+          "number": 3205,
+          "city": "adelaide",
+          "excerpt": "底部偏左的 Glenelg tram 走廊中，官方图在 Plympton Park 与 South Plympton 之间的站名为 Marion Road，但当前图写成 Marion Park。",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/3205"
+        }
+      ]
+    },
+    {
+      "key": "reference",
+      "label": "参考链接或参考范围不合规",
+      "count": 11,
+      "percent": 22.4,
+      "examples": [
+        {
+          "number": 1826,
+          "city": "San Francisco",
+          "excerpt": "This submission claims to add the full San Francisco Bay Area BART map, covering the San Francisco station section, the Richmond/Antioch directions, the Berryessa/North San José direction, the SFO/Millbrae direction, and the Oakland Airport Connector. However, `metadata.reference` uses a Reddit link. Under the resource review procedure, the reference link must come from an official website, Wikipedia, or an acceptable official social media source. Please use a verifiable source such as BART’s official system map page or official PDF instead.",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/1826"
+        },
+        {
+          "number": 2817,
+          "city": "paris",
+          "excerpt": "该稿件使用的参考链接为 RATP Metro map，但实际更新图加入了 RER、Transilien、OrlyVal 等参考图范围外内容，资源范围与参考资料不一致，无法按当前参考图审核通过。 图中更新位置：全图大范围重制；顶部、右侧、底部新增/重绘 RER、Transilien，以及底部中偏右 14 号线 Olympiades 至 Aéroport d’Orly 段。",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/2817"
+        },
+        {
+          "number": 3375,
+          "city": "Bangkok",
+          "excerpt": "该稿件声称新增整张曼谷轨道交通图（中央 Blue Line 环线、北部/东北部 Pink Line 与 Muang Thong Thani 支线、东部 ARL 至 Suvarnabhumi、东南部 Sukhumvit/Yellow Line），但 reference 字段使用的 https://www.bangkoktransitmap.com/ 页面明示为 unofficial map、由个人维护，不属于接受的官网、维基百科或官方社交媒体来源，本议题按引用来源不合规关闭。",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/3375"
+        }
+      ]
+    },
+    {
+      "key": "missing",
+      "label": "漏站、漏线或遗漏官方标注",
+      "count": 5,
+      "percent": 10.2,
+      "examples": [
+        {
+          "number": 3174,
+          "city": "lyon",
+          "excerpt": "After comparing this submission with TCL's official September 2025 Lignes fortes map, this update changes the Lyon resource into a metro-only map containing lines A/B/C/D. It removes the 7 tramway lines and 2 funicular lines that are present in both the official map and the current gallery resource. The southern terminus of line B is also named differently from the official map: this submission uses \"Saint Genis-Laval Hôpital Lyon Sud\", while the official map uses \"Saint-Genis-Laval Hôpital Sud\". Therefore, this update does not match the official map and cannot be merged.",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/3174"
+        },
+        {
+          "number": 3371,
+          "city": "sydney (ferry service)",
+          "excerpt": "图中右侧中部 Barangaroo - Blackwattle Bay 的 F10 轮渡更新缺少官方路线中的 Pirrama Park Wharf 一站。",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/3371"
+        },
+        {
+          "number": 3484,
+          "city": "vienna",
+          "excerpt": "底部偏左 U6 的 Erlaaer Straße 至 Siebenhirten 段缺少官方图中标示的 Perfektastraße。",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/3484"
+        }
+      ]
+    },
+    {
+      "key": "status",
+      "label": "开通/规划状态处理错误",
+      "count": 3,
+      "percent": 6.1,
+      "examples": [
+        {
+          "number": 3266,
+          "city": "shaoxing",
+          "excerpt": "底部偏左的绍兴城际线中，更新图把“柯桥 Keqiao”站标为“暂未开通 / Open Soon”，但当前官方线路图已将“柯桥 Keqiao”作为普通绍兴城际站显示，未标注暂未开通。",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/3266"
+        },
+        {
+          "number": 3454,
+          "city": "Barcelona",
+          "excerpt": "图中右侧偏上将 L1 从 Fondo 继续延伸至 Montigalà | Lloreda、Sant Cristo、Bufalà、Badalona Estació，但参考线路图中 L1 终点为 Fondo，未标识这段规划/未开通延伸线。",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/3454"
+        },
+        {
+          "number": 3520,
+          "city": "jinhuayiwuanddongyang",
+          "excerpt": "顶部偏中的义乌高铁站已更新为正常站，但右下方义东段体育馆站至横店高铁站、明清宫站一带中，横店高铁站被标注为“暂缓”。当前官方线路图中横店高铁站已为正常站，该标注与官方图不符。",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/3520"
+        }
+      ]
+    },
+    {
+      "key": "no_substantive",
+      "label": "没有实质性资源更新",
+      "count": 2,
+      "percent": 4.1,
+      "examples": [
+        {
+          "number": 2838,
+          "city": "shenzhen",
+          "excerpt": "该提交主要调整左上至中上区域多处站点和提示框的位置，未形成可复核的实质线路、车站、开通状态或站名修正，因此暂不能合入。",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/2838"
+        },
+        {
+          "number": 3438,
+          "city": "guangzhou",
+          "excerpt": "该提交未形成可审核的实质性线路图更新：本次变化主要是在整图顶部/背景区域新增嵌入图片，并删除北向标与标题文字节点；没有新增或修正任何车站、线路或站段。",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/3438"
+        }
+      ]
+    },
+    {
+      "key": "metadata",
+      "label": "提交说明或元数据问题",
+      "count": 1,
+      "percent": 2.0,
+      "examples": [
+        {
+          "number": 2278,
+          "city": "hochiminhcity",
+          "excerpt": "嗨，建议更新理由`New template of `改为`New template of hochiminhcity`喔 :)",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/2278"
+        }
+      ]
+    },
+    {
+      "key": "rendering",
+      "label": "图面错位或渲染问题",
+      "count": 1,
+      "percent": 2.0,
+      "examples": [
+        {
+          "number": 2509,
+          "city": "chongqing",
+          "excerpt": "嗨，新的图片看起来也有点错位，主要是设施标识那里 :( ![](https://raw.githubusercontent.com/railmapgen/rmp-gallery/42d719ce0e4c970b0df560d6d6169e840eb9985f/public/resources/thumbnails/chongqing.png)",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/2509"
+        }
+      ]
+    },
+    {
+      "key": "resource_scope",
+      "label": "资源归属范围问题",
+      "count": 1,
+      "percent": 2.0,
+      "examples": [
+        {
+          "number": 3538,
+          "city": "zhenjiang",
+          "excerpt": "嗨，此线路应被包含在南京地铁线路图中。想要独立的话，至少需要独立的线路图，感谢您的理解 :)",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/3538"
+        }
+      ]
+    },
+    {
+      "key": "other",
+      "label": "未细化的官方图不一致",
+      "count": 1,
+      "percent": 2.0,
+      "examples": [
+        {
+          "number": 3540,
+          "city": "chongqing",
+          "excerpt": "嗨，感谢您的贡献与支持！但看起来您的修改与官网最新线路图不一致，欢迎修正后重新提交 :) <img width=\"312\" height=\"75\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/2fa4c272-a704-4599-9d2c-87f835387f90\" />",
+          "url": "https://github.com/railmapgen/rmp-gallery/issues/3540"
+        }
+      ]
+    }
+  ],
+  "reasonTags": [
+    {
+      "key": "text",
+      "label": "站名/英文/编号/图例错误",
+      "count": 26,
+      "percentOfIssues": 53.1
+    },
+    {
+      "key": "reference",
+      "label": "参考链接/参考范围问题",
+      "count": 11,
+      "percentOfIssues": 22.4
+    },
+    {
+      "key": "missing",
+      "label": "漏站/漏线/漏官方标注",
+      "count": 8,
+      "percentOfIssues": 16.3
+    },
+    {
+      "key": "status",
+      "label": "开通/规划/更名状态错误",
+      "count": 5,
+      "percentOfIssues": 10.2
+    },
+    {
+      "key": "scope_extra",
+      "label": "额外加入或误删官方范围",
+      "count": 3,
+      "percentOfIssues": 6.1
+    },
+    {
+      "key": "no_substantive",
+      "label": "非实质更新",
+      "count": 2,
+      "percentOfIssues": 4.1
+    },
+    {
+      "key": "metadata",
+      "label": "提交说明/元数据问题",
+      "count": 1,
+      "percentOfIssues": 2.0
+    },
+    {
+      "key": "rendering",
+      "label": "图面错位/渲染问题",
+      "count": 1,
+      "percentOfIssues": 2.0
+    },
+    {
+      "key": "resource_scope",
+      "label": "资源归属问题",
+      "count": 1,
+      "percentOfIssues": 2.0
+    },
+    {
+      "key": "other",
+      "label": "未明细化官方不一致",
+      "count": 1,
+      "percentOfIssues": 2.0
+    }
+  ]
+}
