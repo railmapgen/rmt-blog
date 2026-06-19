@@ -35,6 +35,9 @@ mixin language-switcher()
                 if lang !== page.lang
                     if page.layout === 'post'
                         - var targetPath = page.translations && page.translations[lang] ? page.translations[lang] : null
+                        if !targetPath && site.posts && site.posts.data
+                            - var translatedPost = site.posts.data.find(post => post.lang === lang && post.slug === page.slug)
+                            - targetPath = translatedPost ? (translatedPost.path || `/${lang}/${translatedPost.slug}/`) : null
                         if targetPath
                             a.language-option(href=url_for(targetPath))
                                 != __('nav.languages.' + lang)

@@ -18,8 +18,9 @@ nav.site-nav
                             +language-switcher()
         
             .nav-controls 
-                .more-menu.hidden-mobile
-                    +more-menu()
+                if theme.nav.secondary && theme.nav.secondary.links && theme.nav.secondary.links.length
+                    .more-menu.hidden-mobile
+                        +more-menu()
                 
                 if theme.search && theme.search.enable
                     button.search-toggle(type="button", aria-label=__('nav.search'), title=__('nav.search'))
